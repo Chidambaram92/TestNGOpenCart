@@ -23,6 +23,10 @@ public class HomePageStep extends BaseClass
 	public WebElement openCartSearch;
 	@FindBy(xpath="//span[@class='input-group-btn']//i[@class='fa fa-search']")
 	public WebElement openCartSearchIcon;
+	@FindBy(xpath="//div[@class='collapse navbar-collapse navbar-ex1-collapse']/ul/li/a[contains(text(),'Laptops')]")
+	public WebElement navTile;
+	@FindBy(xpath="//a[contains(text(),'Show All Desktops')]")
+	public WebElement desktopLink;
 	ApplicationMethods appObj;
 	public HomePageStep() 
 	{
@@ -60,5 +64,13 @@ public class HomePageStep extends BaseClass
 		catch(Exception e) {
 			System.out.println(e.getMessage());
 		}
+	}
+	public void clickTile() {
+		WebElement elementTile=navTile;
+		WebElement elementLogDesk=desktopLink;
+		ApplicationMethods.clickMethod(elementTile);
+		appObj.expWait(elementLogDesk, 30);
+		ApplicationMethods.clickMethod(elementLogDesk);
+		
 	}
 }
