@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Book Suite">
+	<test thread-count="2" name="Book Test">
+	<!-- <parameter name="instance" value="Test001"/>
+	<parameter name="browser" value="Chrome"/> -->
+	<groups>
+	<run>
+	<include name="Sanity">
+	</include>
+	</run>
+	</groups>
+	
+		<classes>
+			<class name="com.javatestcases.HomePageTestCase">
+			</class>
+			<!--  
+			<class name="com.javareusablemethods.BaseClass" />
+			<class name="com.qa.TestCase.CustomerHelpPageTest" />
+			-->
+		</classes>
+	</test> 
+</suite>
